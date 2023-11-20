@@ -41,7 +41,7 @@ a{
 }
 
 header{
-    background-image:  url("/assets/F1.png");
+    background-image:  url("assets/F1.png");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -370,7 +370,7 @@ main{
     position: absolute;
     right: 1;
     border-radius: 80px;
-    background-image: url("/assets/BTN_bg.svg");
+    background-image: url("assets/BTN_bg.svg");
     top: -5;
     overflow: hidden;
     background-size: contain;
