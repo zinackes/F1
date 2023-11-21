@@ -380,7 +380,7 @@ main{
     z-index: 999;
 }
 
-#drivers h1:first-child{
+#drivers h1:first-child, #teams h1:first-child{
     font-family: "Urbanist";
     letter-spacing: 1.5px;
     margin-bottom: 30px;
@@ -396,7 +396,7 @@ main{
     background-size: calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px);
 }
 
-#drivers{
+#drivers, #teams{
     margin: 0 50px 0 50px;
 }
 
@@ -410,9 +410,12 @@ main{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid transparent;
+    flex-shrink: 0;
+}
+
+.glass1{
     height: 340px;
     border-radius: 40px;
-    flex-shrink: 0;
     width: 600px;
     display: flex;
     align-items: center;
@@ -503,6 +506,40 @@ main{
     letter-spacing: 1.75px;
     font-size: 26px;
 }
+
+.flex-col{
+    display: flex;
+}
+
+.glass2{
+    width: 250px;
+    height: 150px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass2 img{
+    max-width: 60px;
+    filter: drop-shadow(0 0 1rem #00A19B);
+}
+
+.glass2 h2{
+    font-size: 25px;
+    font-family: "Barlow";
+    background-image: linear-gradient(45deg,  #f3ec78, #00A19B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+    background-repeat: repeat;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    margin: 10px;
+}
+
+
 
 
 *::-webkit-scrollbar,
