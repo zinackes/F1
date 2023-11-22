@@ -13,6 +13,18 @@ body{
     initial-value: 0deg;
     inherits: false;
 }
+  
+  @property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+  }
+  
+  @property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+  }
 
 :root{
     --black: #1c1917;
@@ -29,6 +41,8 @@ body{
     --underline-intrinsic-width: 20;
     --underline-cap-width: 8px;
     --underline-width: 18;
+
+
 }
 
 
@@ -380,7 +394,7 @@ main{
     z-index: 999;
 }
 
-#drivers h1:first-child, #teams h1:first-child{
+#drivers h1:first-child, #teams h1:first-child, #tracks h1:first-child{
     font-family: "Urbanist";
     letter-spacing: 1.5px;
     margin-bottom: 30px;
@@ -396,7 +410,7 @@ main{
     background-size: calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px), auto calc(var(--underline-width) * 1px);
 }
 
-#drivers, #teams{
+#drivers, #teams, #tracks{
     margin: 0 50px 0 50px;
 }
 
@@ -512,12 +526,13 @@ main{
 }
 
 #teams .grid{
-    margin-top: 80px;
+    margin: 100px 80px 0 100px;
     display: flex;
     gap: 30px;
     max-width: 700px;
     height: 300px;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .glass2{
@@ -538,7 +553,7 @@ main{
 .glass2 h2{
     font-size: 25px;
     font-family: "Barlow";
-    background-image: linear-gradient(45deg,  #f3ec78, #00A19B);
+    background-image: linear-gradient(45deg,  #96dac1, #00A19B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 100%;
@@ -547,6 +562,107 @@ main{
     -moz-text-fill-color: transparent;
     margin: 10px;
 }
+
+.rond3{
+    width: 150px;
+    height: 150px;
+    background: #e93919;
+    border-radius: 150px;
+    position: absolute;
+    z-index: -111;
+    top: -65;
+    right: 90;
+    -moz-box-shadow: 0 0 15px #e93919;
+    -webkit-box-shadow: 0 0 15px #e93919;
+    box-shadow: 0 0 15px #e93919;
+}
+
+.rond4{
+    width: 225px;
+    height: 225px;
+    background: #e93919;
+    border-radius: 225px;
+    position: absolute;
+    z-index: -111;
+    top: 45;
+    left: -125;
+    -moz-box-shadow: 0 0 15px #e93919;
+    -webkit-box-shadow: 0 0 15px #e93919;
+    box-shadow: 0 0 15px #e93919;
+}
+
+.read-more2{
+    border: 0.2rem solid rgba(64, 125, 206, 0.1);
+    border-radius: 5px;
+    width: 150px;
+    max-height: 25px;
+    font-family: "Raleway";
+    margin: 50px 0 0 25px;
+    font-size: 20px;
+    padding: 13px 20px;
+    text-align: center;
+    color: #fafaf9;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.read-more2:hover{
+    transition: var(--transition);
+    border: 0.2rem solid rgb(228, 1, 24, 0.8);
+}
+
+
+.grid2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid2 .box{
+    background: rgb(39, 38, 35);
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    align-items: flex-start;
+}
+
+.grid2 .box .img{
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    background-image: url("/assets/gp_monaco.jpeg");
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-radius: 16px;
+}
+
+.grid2 .box h2{
+    margin: 0;
+    font-family: "Work sans";
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    font-size: 18px;
+}
+
+.grid2 .box p{
+    margin: 7px 0 0 0;
+    font-family: "Poppins";
+    color: #cccccc;
+    font-size: 15px;
+}
+
+.grid2 .box h1{
+    margin: 15px 0 15px 0;
+    font-size: 18.5px;
+    font-weight: 600;
+    font-family: "Raleway";
+    letter-spacing: 1.7px;
+}
+
+
+
+
+
 
 
 
@@ -571,9 +687,3 @@ main{
 	100% { background-position: 0% 50%; }
 }
 
-
-@keyframes borderRotate {
-	100% {
-		--angle: 420deg;
-	}
-}
